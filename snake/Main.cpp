@@ -25,21 +25,30 @@ void MainMenu()
     bool start_game = false;
 
     static const wchar_t* difficulty_string[] = { L"  EASY  ", L" MEDIUM ", L"  HARD  " };
+    static const wchar_t* description[] =
+    { L"                        Start the game                               ",
+      L"            The difficulty changes the speed of the game.            ",
+      L"    Classic : Only Left + Right Arrows -- Non Classic: All Arrows    "
+    };
 
     while (!start_game) {
-        wsprintf(&screen[15 * ScreenWidth + 45],
+        wsprintf(&screen[10 * ScreenWidth + 45],
             L"    S N A K E");
-        wsprintf(&screen[20 * ScreenWidth + 45],
+        wsprintf(&screen[15 * ScreenWidth + 45],
             L"  %s PLAY GAME", 
             current_selection == PLAY_GAME ? L">" : L" ");
-        wsprintf(&screen[21 * ScreenWidth + 45],
+        wsprintf(&screen[16 * ScreenWidth + 45],
             L"  %s DIFFICULTY [%s]", 
             current_selection == DIFFICULTY ? L">" : L" ",
             difficulty_string[current_difficulty]);
-        wsprintf(&screen[22 * ScreenWidth + 45],
+        wsprintf(&screen[17 * ScreenWidth + 45],
             L"  %s CLASSIC CONTROLS [%s]", 
             current_selection == CONTROLS ? L">" : L" ",
             current_controls == CLASSIC ? L" ON  " : L" OFF ");
+        wsprintf(&screen[22 * ScreenWidth + 25],
+            L"%s", description[current_selection]);
+        wsprintf(&screen[25 * ScreenWidth + 40],
+            L"PRESS 'SPACE' TO MAKE A SELECTION");
         WriteConsoleOutputCharacter(hConsole, screen,
             total_screen_size, { 0, 0 }, &bytes_written);
 
