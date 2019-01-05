@@ -466,40 +466,6 @@ SNAKE_DIRECTION ChangeDirectionLeft(SNAKE_DIRECTION direction)
     }
 }
 
-SNAKE_DIRECTION ChangeDirectionUp(SNAKE_DIRECTION direction)
-{
-    switch (direction)
-    {
-    case UP:
-        return LEFT;
-    case LEFT:
-        return DOWN;
-    case DOWN:
-        return RIGHT;
-    case RIGHT:
-        return UP;
-    default:
-        return direction;
-    }
-}
-
-SNAKE_DIRECTION ChangeDirectionDown(SNAKE_DIRECTION direction)
-{
-    switch (direction)
-    {
-    case UP:
-        return LEFT;
-    case LEFT:
-        return DOWN;
-    case DOWN:
-        return RIGHT;
-    case RIGHT:
-        return UP;
-    default:
-        return direction;
-    }
-}
-
 void ShowPausedScreen(wchar_t* screen)
 {
     ClearScreen(screen);

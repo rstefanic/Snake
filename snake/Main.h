@@ -97,6 +97,4 @@ void DrawFood(wchar_t* screen);
 void GetInput(wchar_t* screen);
 SNAKE_DIRECTION ChangeDirectionRight(SNAKE_DIRECTION direction);
 SNAKE_DIRECTION ChangeDirectionLeft(SNAKE_DIRECTION direction);
-SNAKE_DIRECTION ChangeDirectionUp(SNAKE_DIRECTION direction);
-SNAKE_DIRECTION ChangeDirectionDown(SNAKE_DIRECTION direction);
 void ShowPausedScreen(wchar_t* screen);
